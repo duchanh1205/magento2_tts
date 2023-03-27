@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">portfolio_details_form.portfolio_details_form_data_source</item>
+            <item name="deps" xsi:type="string">portfolio_details_form.portfolio_details_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Add New Details</item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data</item>
+            <item name="namespace" xsi:type="string">portfolio_details_form</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="save" class="Tigren\Portfolio\Block\Adminhtml\Details\Create\SaveButton"></button>
+            <button name="back" class="Tigren\Portfolio\Block\Adminhtml\Details\Create\BackButton"></button>
+        </buttons>
+    </settings>
+    <dataSource name="portfolio_details_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Tigren\Portfolio\Model\DataProvider</argument>
+            <argument name="name" xsi:type="string">portfolio_details_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">portfolio_id</argument>
+            <argument name="requestFieldName" xsi:type="string">portfolio_id</argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="tigren_portfolio/details/save"></submitUrl>
+        </settings>
+    </dataSource>
+    <fieldset name="Add New Details">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="label" xsi:type="string" translate="true">Details</item>
+                <item name="sortOrder" xsi:type="number">20</item>
+            </item>
+        </argument>
+        <field name="portfolio_id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Portfolio Id</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">details</item>
+                    <item name="dataScope" xsi:type="string">portfolio_id</item>
+                </item>
+            </argument>
+        </field>
+        <field name="name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Name</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">details</item>
+                    <item name="dataScope" xsi:type="string">name</item>
+                </item>
+            </argument>
+        </field>
+        <field name="identifier">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Identifier</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">details</item>
+                    <item name="dataScope" xsi:type="string">identifier</item>
+                </item>
+            </argument>
+        </field>
+        <!--        <field name="thumbnail_image">-->
+        <!--            <argument name="data" xsi:type="array">-->
+        <!--                <item name="config" xsi:type="array">-->
+        <!--                    <item name="dataType" xsi:type="string">text</item>-->
+        <!--                    <item name="label" xsi:type="string" translate="true">Thumbnail Image</item>-->
+        <!--                    <item name="formElement" xsi:type="string">input</item>-->
+        <!--                    <item name="source" xsi:type="string">details</item>-->
+        <!--                    <item name="dataScope" xsi:type="string">thumbnail_image</item>-->
+        <!--                </item>-->
+        <!--            </argument>-->
+        <!--        </field>-->
+        <field name="thumbnail_image" sortOrder="40" formElement="imageUploader">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">details</item>
+                </item>
+            </argument>
+            <settings>
+                <elementTmpl>ui/form/element/uploader/image</elementTmpl>
+                <dataType>string</dataType>
+                <label translate="true">Thumbnail Image</label>
+                <visible>true</visible>
+                <required>false</required>
+            </settings>
+            <formElements>
+                <imageUploader>
+                    <settings>
+                        <required>false</required>
+                        <uploaderConfig>
+                            <param xsi:type="url" name="url" path="catalog/category_image/upload" />
+                        </uploaderConfig>
+                        <previewTmpl>Magento_Catalog/image-preview</previewTmpl>
+                        <openDialogTitle>Media Gallery</openDialogTitle>
+                        <initialMediaGalleryOpenSubpath>catalog/category</initialMediaGalleryOpenSubpath>
+                        <allowedExtensions>jpg jpeg gif png</allowedExtensions>
+                        <maxFileSize>4194304</maxFileSize>
+                    </settings>
+                </imageUploader>
+            </formElements>
+        </field>
+        
+        <!--        <field name="base_image">-->
+        <!--            <argument name="data" xsi:type="array">-->
+        <!--                <item name="config" xsi:type="array">-->
+        <!--                    <item name="dataType" xsi:type="string">text</item>-->
+        <!--                    <item name="label" xsi:type="string" translate="true">Base Image</item>-->
+        <!--                    <item name="formElement" xsi:type="string">input</item>-->
+        <!--                    <item name="source" xsi:type="string">details</item>-->
+        <!--                    <item name="dataScope" xsi:type="string">base_image</item>-->
+        <!--                </item>-->
+        <!--            </argument>-->
+        <!--        </field>-->
+        <field name="base_image" sortOrder="40" formElement="imageUploader">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">details</item>
+                </item>
+            </argument>
+            <settings>
+                <elementTmpl>ui/form/element/uploader/image</elementTmpl>
+                <dataType>string</dataType>
+                <label translate="true">Base Image</label>
+                <visible>true</visible>
+                <required>false</required>
+            </settings>
+            <formElements>
+                <imageUploader>
+                    <settings>
+                        <required>false</required>
+                        <uploaderConfig>
+                            <param xsi:type="url" name="url" path="catalog/category_image/upload" />
+                        </uploaderConfig>
+                        <previewTmpl>Magento_Catalog/image-preview</previewTmpl>
+                        <openDialogTitle>Media Gallery</openDialogTitle>
+                        <initialMediaGalleryOpenSubpath>catalog/category</initialMediaGalleryOpenSubpath>
+                        <allowedExtensions>jpg jpeg gif png</allowedExtensions>
+                        <maxFileSize>4194304</maxFileSize>
+                    </settings>
+                </imageUploader>
+            </formElements>
+        </field>
+        <field name="services">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Services</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">details</item>
+                    <item name="dataScope" xsi:type="string">services</item>
+                </item>
+            </argument>
+        </field>
+        <field name="skills">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Skills</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">details</item>
+                    <item name="dataScope" xsi:type="string">skills</item>
+                </item>
+            </argument>
+        </field>
+        <field name="project_url">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Project Url</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">details</item>
+                    <item name="dataScope" xsi:type="string">project_url</item>
+                </item>
+            </argument>
+        </field>
+        <field name="client">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Client</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">details</item>
+                    <item name="dataScope" xsi:type="string">client</item>
+                </item>
+            </argument>
+        </field>
+        <field name="description">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Description</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">details</item>
+                    <item name="dataScope" xsi:type="string">description</item>
+                </item>
+            </argument>
+        </field>
+        <field name="status">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Status</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">details</item>
+                    <item name="dataScope" xsi:type="string">status</item>
+                </item>
+            </argument>
+        </field>
+        <field name="portfolio_date">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">timestamp</item>
+                    <item name="label" xsi:type="string" translate="true">Portfolio Date</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">details</item>
+                    <item name="dataScope" xsi:type="string">portfolio_date</item>
+                </item>
+            </argument>
+        </field>
+        <field name="create_time">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">timestamp</item>
+                    <item name="label" xsi:type="string" translate="true">Create Time</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">details</item>
+                    <item name="dataScope" xsi:type="string">create_time</item>
+                </item>
+            </argument>
+        </field>
+        <field name="update_time">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">timestamp</item>
+                    <item name="label" xsi:type="string" translate="true">Update Time</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">details</item>
+                    <item name="dataScope" xsi:type="string">update_time</item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+</form>

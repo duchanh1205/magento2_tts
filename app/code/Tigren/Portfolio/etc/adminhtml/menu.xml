@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Tigren_Portfolio::portfolio" title="Port Folio"
+             module="Tigren_Portfolio" sortOrder="50" resource="Tigren_Portfolio::portfolio" />
+        <add id="Tigren_Portfolio::portfolio_manage_portfolio_category"
+             title="Manage Portfolio Category"
+             module="Tigren_Portfolio"
+             sortOrder="50"
+             parent="Tigren_Portfolio::portfolio"
+             action="tigren_portfolio/category/index"
+             resource="Tigren_Portfolio::portfolio_manage_portfolio_category" />
+
+        <add id="Tigren_Portfolio::portfolio_manage_portfolio_detail"
+             title="Manage Portfolio Detail"
+             module="Tigren_Portfolio"
+             sortOrder="50"
+             parent="Tigren_Portfolio::portfolio"
+             action="tigren_portfolio/details/index"
+             resource="Tigren_Portfolio::portfolio_manage_portfolio_detail" />
+
+
+    </menu>
+</config>

@@ -1,0 +1,30 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="Tigren_portfolio_category_listing_data_source" xsi:type="string">Tigren\Portfolio\Model\ResourceModel\Category\Grid\Collection</item>
+            </argument>
+        </arguments>
+
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="Tigren_portfolio_details_listing_data_source" xsi:type="string">Tigren\Portfolio\Model\ResourceModel\Details\Grid\Collection</item>
+            </argument>
+        </arguments>
+
+    </type>
+    <virtualType name="Tigren\Portfolio\Model\ResourceModel\Category\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">Tigren_portfolio_category</argument>
+            <argument name="resourceModel" xsi:type="string">Tigren\Portfolio\Model\ResourceModel\Category</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Tigren\Portfolio\Model\ResourceModel\Details\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">Tigren_portfolio_details</argument>
+            <argument name="resourceModel" xsi:type="string">Tigren\Portfolio\Model\ResourceModel\Details</argument>
+        </arguments>
+    </virtualType>
+
+</config>
