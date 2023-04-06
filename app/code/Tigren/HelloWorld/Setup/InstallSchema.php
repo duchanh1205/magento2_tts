@@ -1,6 +1,6 @@
 <?php
 
-namespace Tigrenn\HelloWorld\Setup;
+namespace Tigren\HelloWorld\Setup;
 
 class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
 {
@@ -11,7 +11,7 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
         $installer = $setup;
         $installer->startSetup();
         $table = $installer->getConnection()->newTable(
-            $installer->getTable('Tigrenn_topic')
+            $installer->getTable('Tigren_topic')
         )->addColumn(
             'topic_id',
             \Magento\Framework\DB\Ddl\Table::TYPE_SMALLINT,
@@ -41,7 +41,7 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
             ],
             'Topic Creation Time'
         )->setComment(
-            'Tigrenn Topic Table'
+            'Tigren Topic Table'
         );
         $installer->getConnection()->createTable($table);
         $installer->endSetup();

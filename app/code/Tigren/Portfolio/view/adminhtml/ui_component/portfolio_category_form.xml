@@ -57,7 +57,7 @@
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="dataType" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Catgegory Name</item>
+                    <item name="label" xsi:type="string" translate="true">Category Name</item>
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="source" xsi:type="string">category</item>
                     <item name="dataScope" xsi:type="string">category_name</item>
