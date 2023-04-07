@@ -1,0 +1,15 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <!-- @author    Tigren Solutions <info@tigren.com>-->
+    <!-- @copyright Copyright (c) 2023 Tigren Solutions <https://www.tigren.com>. All rights reserved.-->
+    <!-- @license   Open Software License ("OSL") v. 3.0-->
+    <body>
+        <!--        <referenceContainer name="my.custom.container">-->
+        <!--            <referenceBlock name="my.custom.block" remove="true" />-->
+        <!--        </referenceContainer>-->
+
+        <!--Move custom block's message from footer to category header(code challenge 1)-->
+        <referenceContainer name="header.container">
+            <block class="Magento\Framework\View\Element\Template" name="my.custom.block" template="Tigren_Portfolio::message.phtml" />
+        </referenceContainer>
+    </body>
+</page>

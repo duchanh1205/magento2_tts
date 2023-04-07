@@ -1,0 +1,15 @@
+<!--the content of the block's message(code challenge 2)-->
+<p>This is the content of my custom block child.</p>
+<!--access the value of the argument's name 'my_custom_data' and escape the output in your templates(code challenge 2)-->
+<?php
+/**
+ * @author    Tigren Solutions <info@tigren.com>
+ * @copyright Copyright (c) 2023 Tigren Solutions <https://www.tigren.com>. All rights reserved.
+ * @license   Open Software License ("OSL") v. 3.0
+ */
+/** @var Magento\Framework\View\Element\Template $block */
+$myCustomData = $block->escapeHtml($block->getData('my_custom_data'));
+echo $myCustomData;
+?>
+
+

@@ -13,5 +13,25 @@
         </referenceBlock>
         <!--Remove copyright-->
         <referenceBlock name="copyright" remove="true" />
+        <!--!Add a new container's footer(code challenge 1)-->
+        <referenceContainer name="footer">
+            <container name="my.custom.container" label="Custom Container" htmlTag="div" htmlClass="custom-class">
+                <!--Add a block that output the message -->
+                <block class="Magento\Framework\View\Element\Template" name="my.custom.block" template="Tigren_Portfolio::message.phtml">
+                    <!--Define a new argument in parent block(code challenge 2)-->
+                    <arguments>
+                        <argument name="my_custom_data" xsi:type="string">Hello from parent block!</argument>
+                    </arguments>
+                    <!--Add a child block that output the message(code challenge 2)-->
+                    <block class="Magento\Framework\View\Element\Template" name="my.custom.block.child" template="Tigren_Portfolio::child.phtml">
+                        <!--Define a new argument in child block(code challenge 2)-->
+                        <arguments>
+                            <argument name="my_custom_data" xsi:type="string">Hello from child block!</argument>
+                        </arguments>
+                    </block>
+                </block>
+            </container>
+        </referenceContainer>
+
     </body>
 </page>
