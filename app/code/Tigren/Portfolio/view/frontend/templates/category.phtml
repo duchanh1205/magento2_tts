@@ -1,13 +1,35 @@
 <?php
-
+/**
+ * @author    Tigren Solutions <info@tigren.com>
+ * @copyright Copyright (c) 2023 Tigren Solutions <https://www.tigren.com>. All rights reserved.
+ * @license   Open Software License ("OSL") v. 3.0
+ */
 /**
  * @var \Tigren\Portfolio\Block\Display $block
  */
 
-echo $block->categoryShow();
+//echo $block->categoryShow();
+
 
 ?>
+<textarea name="comment" id="comment" title="<?= $block->escapeHtmlAttr(__('Comment')) ?>" class="input-text"
+          data-mage-init='{"Tigren_Portfolio/js/kiwicount": {"maxlen":"150","messagebox":"charNum"}
+}'></textarea>
 
+<script type="text/x-magento-init">
+{
+    "#my-element": {
+        "myCustomData": {
+            "foo": "bar",
+            "baz": 123
+        }
+    }
+}
+
+
+</script>
+
+<span id="charNum"></span>
 <style>
     table {
         font-family: arial, sans-serif;
@@ -52,5 +74,6 @@ echo $block->categoryShow();
 </table>
 
 </body>
+
 </html>
 

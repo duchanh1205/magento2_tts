@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!-- @author    Tigren Solutions <info@tigren.com>-->
+<!-- @copyright Copyright (c) 2023 Tigren Solutions <https://www.tigren.com>. All rights reserved.-->
+<!-- @license   Open Software License ("OSL") v. 3.0-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <!--        &lt;!&ndash;add js file in <head> (code challeng 1)&ndash;&gt;-->
+        <!--        <css src="Tigren_Portfolio::css/default.css" />-->
+        <!--        <script src="Tigren_Portfolio::js/default.js" />-->
+
+        <!--        <script src="Tigren_Portfolio::js/customscripts.js" />-->
+
+        <!--        <script src="Tigren_Portfolio::js/magescripts.js" />-->
+        <!--        &lt;!&ndash;use x magento init (code challenge 2)&ndash;&gt;-->
+        <!--        <script src="Tigren_Portfolio::js/xmagescripts.js" />-->
+        <!--        &lt;!&ndash;add global js file (code challenge 1)&ndash;&gt;-->
+        <!--        <script src="Tigren_Portfolio::js/globalscripts.js" />-->
+        <!--        &lt;!&ndash;add alias in a requireJS config (code challenge 2)&ndash;&gt;-->
+        <!--        <script src="Tigren_Portfolio::js/script.js" />-->
+
+        <!--        <script src="Tigren_Portfolio::js/passdatascripts.js" />-->
+
+        <!--        <script src="Tigren_Portfolio::js/mywidget.js" />-->
+        <!--        <script src="Tigren_Portfolio::js/kiwicount.js" />-->
+    </head>
+</page>
