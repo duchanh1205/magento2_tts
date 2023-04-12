@@ -52,7 +52,7 @@ var config = {
     <!--pass config data (code challenge 2)-->
     map: {
         '*': {
-            passscript: 'Tigren_PortFolio/js/passscript'
+            'passscript': 'Tigren_Portfolio/js/passscript'
         }
     }
 };
