@@ -12,14 +12,23 @@
 
 
 ?>
+<button id="modal-btn" data-mage-init='{"Tigren_Portfolio/js/test_js": {"id":"modal-btn"}}'>TEST JS</button>
+
+<div id="modal-content">
+    <div class="modal-inner-content">
+        <h2>TEST JS Title</h2>
+        <p>TEST JS content.....</p>
+    </div>
+</div>
+
 <textarea name="comment" id="comment" title="<?= $block->escapeHtmlAttr(__('Comment')) ?>" class="input-text"
           data-mage-init='{"Tigren_Portfolio/js/kiwicount": {"maxlen":"150","messagebox":"charNum"}
 }'></textarea>
 
 </script>
 
-
-<div data-mage-init='{"passscript":{"title":"sdfafsd"}}' />
+<!--Button's name "TEST JS"-->
+<!--<button type="button" name="test-js" data-mage-init='{"testJs": {}}'>TEST JS</button>-->
 
 <span id="charNum"></span>
 <style>
