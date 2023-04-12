@@ -9,34 +9,17 @@ var config = {
         '*': {
             customscripts: 'Tigren_Portfolio/js/customscripts',
             'Magento_Sales/js/order/create/scripts':
-                'Tigren_Portfolio/js/customscripts'
+                'Tigren_Portfolio/js/customscripts',
+            magescript: 'Tigren_Portfolio/js/magescripts',
+            'mywidget': 'Tigren_Portfolio/js/mywidget',
+            'kiwicount': 'Tigren_Portfolio/js/kiwicount',
+            test_js: 'Tigren_Portfolio/js/test_js.js'
         }
     },
-    <!--use data mage init (code challenge 2)-->
-    map: {
-        '*': {
-            magescript: 'Tigren_Portfolio/js/magescripts'
-        }
-    },
-    <!--Add global files (code challenge 1)-->
     deps: ['js/globalscripts.js'],
-    <!--Set alias file call (code challeng 2)-->
     paths: {
         'alias script': 'Tigren_Portfolio/js/script'
     },
-
-    map: {
-        '*': {
-            'mywidget': 'Tigren_Portfolio/js/mywidget'
-        }
-    },
-    <!--jquery widget (code challenge 3)-->
-    map: {
-        '*': {
-            'kiwicount': 'Tigren_Portfolio/js/kiwicount'
-        }
-    },
-    <!--Declare a Mixins (code challenge 3)-->
     config: {
         map: {
             '*': {
@@ -47,12 +30,6 @@ var config = {
             'mage/kiwicount': {
                 'Tigren_Portfolio/js/kiwicount-mixin': true
             }
-        }
-    },
-    <!--pass config data (code challenge 2)-->
-    map: {
-        '*': {
-            'passscript': 'Tigren_Portfolio/js/passscript'
         }
     }
 };
