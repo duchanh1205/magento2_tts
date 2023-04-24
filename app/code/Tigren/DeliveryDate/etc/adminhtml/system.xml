@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!-- @author    Tigren Solutions <info@tigren.com>-->
+<!-- @copyright Copyright (c) 2023 Tigren Solutions <https://www.tigren.com>. All rights reserved.-->
+<!-- @license   Open Software License ("OSL") v. 3.0-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="tigren_deliverydate" translate="label" type="text" sortOrder="1300" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Delivery Date Settings</label>
+            <tab>sales</tab>
+            <resource>Tigren_DeliveryDate::deliverydate</resource>
+            <group id="general" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Delivery Date Settings</label>
+                <field id="format" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Date Format</label>
+                    <comment>yy-mm-dd</comment>
+                </field>
+                <field id="disabled" translate="label" type="multiselect" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Date Off</label>
+                    <source_model>Tigren\DeliveryDate\Model\Config\Source\Disabled</source_model>
+                </field>
+                <field id="hourMin" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Delivery Time From</label>
+                    <comment>Should be 8=>8AM, 9=>9AM</comment>
+                </field>
+                <field id="hourMax" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Delivery Time To</label>
+                    <comment>Should be 22=>10PM, 23=>11PM because Minutes cover 1hr</comment>
+                </field>
+                <field id="required_delivery_date" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Required Delivery Date</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

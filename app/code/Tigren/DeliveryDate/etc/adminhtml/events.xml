@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- @author    Tigren Solutions <info@tigren.com>-->
+<!-- @copyright Copyright (c) 2023 Tigren Solutions <https://www.tigren.com>. All rights reserved.-->
+<!-- @license   Open Software License ("OSL") v. 3.0-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="layout_render_element">
+        <observer name="tigren_delivery_date_add_to_order_view"
+                  instance="Tigren\DeliveryDate\Observer\AddHtmlToOrderShippingView" />
+    </event>
+    <event name="adminhtml_sales_order_create_process_data">
+        <observer name="tigren_adminhtml_sales_order_create_process_data"
+                  instance="Tigren\DeliveryDate\Observer\AdminhtmlSalesOrderCreateProcessData" />
+    </event>
+</config>

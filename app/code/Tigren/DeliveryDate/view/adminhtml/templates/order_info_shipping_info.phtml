@@ -1,0 +1,27 @@
+<section class="admin__page-section" id="delivery-date-content">
+    <!-- @author    Tigren Solutions <info@tigren.com>-->
+    <!-- @copyright Copyright (c) 2023 Tigren Solutions <https://www.tigren.com>. All rights reserved.-->
+    <!-- @license   Open Software License ("OSL") v. 3.0-->
+    <div class="admin__page-section-title">
+        <span class="title"><?= $block->escapeHtml(__('Delivery Date Information')) ?></span>
+    </div>
+    <div class="admin__page-section-content">
+        <div id="delivery-date">
+            <strong><?= __('Delivery Date') ?></strong>
+            <span><?= $block->getDeliveryDate() ?></span>
+        </div>
+        <div id="delivery-comment">
+            <strong><?= __('Comment') ?>:</strong>
+            <br />
+            <?= $block->getDeliveryComment() ?>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    require(
+        ['jquery'],
+        function ($) {
+            $('#delivery-date-content').insertAfter($('.order-view-billing-shipping'));
+        }
+    );
+</script>

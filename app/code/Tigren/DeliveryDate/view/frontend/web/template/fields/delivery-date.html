@@ -1,0 +1,14 @@
+<!-- @author    Tigren Solutions <info@tigren.com>-->
+<!-- @copyright Copyright (c) 2023 Tigren Solutions <https://www.tigren.com>. All rights reserved.-->
+<!-- @license   Open Software License ("OSL") v. 3.0-->
+<input class="input-text" type="text" data-bind="
+    event: {change: userChanges},
+    hasFocus: focused,
+    value: value,
+    datetimepicker: true,
+    attr: {
+        name: inputName,
+        placeholder: placeholder,
+        'aria-describedby': noticeId,
+        disabled: disabled
+    }" readonly="true" />
